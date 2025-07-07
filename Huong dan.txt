@@ -1,5 +1,5 @@
 C:\PHATTRIEN_DCMS\docker-compose> docker compose version
 
-docker compose -p dcms up
+C:\PHATTRIEN_DCMS\docker-compose>docker compose -p dcms up
 
-docker compose down
+C:\PHATTRIEN_DCMS\docker-compose>docker compose down
