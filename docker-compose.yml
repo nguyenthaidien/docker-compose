@@ -129,6 +129,8 @@ services:
     environment:
       LOGSTASH_PORT: 5044
       LOGSTASH_HOSTNAME: logstash
+      LS_JAVA_OPTS: "-Xmx256m -Xms256m"
+
   kibana:
     image: kibana:latest
     ports:
