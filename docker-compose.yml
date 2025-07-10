@@ -17,8 +17,9 @@ volumes:
     driver: local # Define a named volume for Nginx log persistence
   eureka_log:
     driver: local # Define a named volume for Eureka log persistence
+  config_log:
+    driver: local # Define a named volume for Config log persistence
 
-   
 services:
   minio:
     image: minio/minio:latest
@@ -62,6 +63,16 @@ services:
       EUREKA_SERVER_HOSTNAME: eureka-server
     volumes:
       - eureka_log:/var/log/eureka
+
+
+  config-server:
+    image: configserver:latest
+    ports:
+      - "8888:8888"
+    environment:
+      CONFIG_SERVER_PORT: 8888  
+    volumes:
+      - config_log:/var/log/config
   # Keycloak service
   # Using a custom image with Keycloak and MySQL configuration
   auth:
