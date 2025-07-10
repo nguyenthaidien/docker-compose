@@ -72,7 +72,7 @@ services:
     environment:
       CONFIG_SERVER_PORT: 8888  
     volumes:
-      - config_log:/var/log/config
+      - config_log:/var/log/config-server
   # Keycloak service
   # Using a custom image with Keycloak and MySQL configuration
   auth:
