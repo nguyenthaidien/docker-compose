@@ -13,3 +13,18 @@ logging to /var/log/
 using git https://github.com/nguyenthaidien/dcms-config-repo.git
 serve for three microservice
 project using two environent dev and prod
+#
+guide me build an spring-boot service 
+with java 17
+with spring-cloud-starter-config client
+with two environment dev and prod
+
+
+No spring.config.import property has been defined
+
+Action:
+
+Add a spring.config.import=configserver: property to your configuration.
+        If configuration is not required add spring.config.import=optional:configserver: instead.
+        To disable this check, set spring.cloud.config.enabled=false or
+        spring.cloud.config.import-check.enabled=false.
