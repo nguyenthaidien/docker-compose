@@ -3,3 +3,13 @@ C:\PHATTRIEN_DCMS\docker-compose> docker compose version
 C:\PHATTRIEN_DCMS\docker-compose>docker compose -p dcms up
 
 C:\PHATTRIEN_DCMS\docker-compose>docker compose down
+
+#Prompt to create config server
+guide me build an spring cloud config server
+with java 17
+eureka client
+actuator
+logging to /var/log/
+using git https://github.com/nguyenthaidien/dcms-config-repo.git
+serve for three microservice
+project using two environent dev and prod

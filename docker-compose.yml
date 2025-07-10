@@ -15,6 +15,8 @@ volumes:
   # You can remove it if you don't need to persist logs
   nginx_log:
     driver: local # Define a named volume for Nginx log persistence
+  eureka_log:
+    driver: local # Define a named volume for Eureka log persistence
 
    
 services:
@@ -52,12 +54,16 @@ services:
 
 
   eureka-server:
-    image: nguyenthaidien/eurekaserver:latest
+    image: eurekaserver:latest
     ports:
       - "8761:8761"
     environment:
       EUREKA_SERVER_PORT: 8761
       EUREKA_SERVER_HOSTNAME: eureka-server
+    volumes:
+      - eureka_log:/var/log/eureka
+  # Keycloak service
+  # Using a custom image with Keycloak and MySQL configuration
   auth:
     image: nguyenthaidien/keycloak:latest
     working_dir: /auth
