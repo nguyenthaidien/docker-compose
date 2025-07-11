@@ -28,3 +28,18 @@ Add a spring.config.import=configserver: property to your configuration.
         If configuration is not required add spring.config.import=optional:configserver: instead.
         To disable this check, set spring.cloud.config.enabled=false or
         spring.cloud.config.import-check.enabled=false.
+--
+guide me build an spring-boot service 
+name: scheduler-service
+with java 17
+with scheduler
+with spring-cloud-starter-config client
+with two environment dev and prod     
+with mysql jdbc connection
+with eureka client
+scheduler get from database
+excute result save to database
+--
+guide me build an spring-boot service 
+name: mock-server
+with java 17

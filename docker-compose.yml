@@ -107,6 +107,13 @@ services:
       API_GATEWAY_HOSTNAME: apigateway
 
 
+  mock-service:
+    image: mockservice:latest
+    ports:
+      - "9100:9100"
+    environment:
+      API_GATEWAY_PORT: 9090    
+      API_GATEWAY_HOSTNAME: apigateway  
 
   demo-service:
     image: demo-service:latest
@@ -123,6 +130,7 @@ services:
     environment:
       API_GATEWAY_PORT: 9090    
       API_GATEWAY_HOSTNAME: apigateway  
+
 
       
   fespa:
