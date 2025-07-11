@@ -108,7 +108,7 @@ services:
 
 
   mock-service:
-    image: mockservice:latest
+    image: mock-service:latest
     ports:
       - "9100:9100"
     environment:
