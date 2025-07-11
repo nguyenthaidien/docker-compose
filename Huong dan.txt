@@ -40,6 +40,6 @@ with eureka client
 scheduler get from database
 excute result save to database
 --
-guide me build an spring-boot service 
-name: mock-server
-with java 17
+
+--
+using postman test secure  api spring-boot microservice 

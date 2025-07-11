@@ -110,7 +110,7 @@ services:
   mock-service:
     image: mock-service:latest
     ports:
-      - "9100:9100"
+      - "8081:8081"
     environment:
       API_GATEWAY_PORT: 9090    
       API_GATEWAY_HOSTNAME: apigateway  
