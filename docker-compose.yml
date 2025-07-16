@@ -55,7 +55,7 @@ services:
 
 
   eureka-server:
-    image: eurekaserver:latest
+    image: eureka-server:latest
     ports:
       - "8761:8761"
     environment:
@@ -76,7 +76,7 @@ services:
   # Keycloak service
   # Using a custom image with Keycloak and MySQL configuration
   auth:
-    image: nguyenthaidien/keycloak:latest
+    image: auth:latest
     working_dir: /auth
     volumes:
       - ./auth:/auth
@@ -98,7 +98,7 @@ services:
     depends_on:
       - mysql
 
-  apigateway:
+  api-gateway:
     image: apigateway:latest
     ports:
       - "9090:9090"
@@ -127,13 +127,13 @@ services:
   user-service:
     image: user-service:latest
     ports:
-      - "9091:9091"
+      - "9194:9194"
     environment:
       API_GATEWAY_PORT: 9090    
       API_GATEWAY_HOSTNAME: apigateway  
     depends_on:
       - config-server
-      - apigateway
+      - api-gateway
       - auth
       - eureka-server
 
@@ -147,7 +147,7 @@ services:
       FESPA_SERVER_HOSTNAME: fespa
     depends_on:
       - auth
-      - apigateway
+      - api-gateway
 
 
 
