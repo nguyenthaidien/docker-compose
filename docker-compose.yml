@@ -95,8 +95,7 @@ services:
       KEYCLOAK_PORT: 8080
       KEYCLOAK_SSL_REQUIRED: external
       KEYCLOAK_LOGLEVEL: DEBUG
-    depends_on:
-      - mysql
+
 
   api-gateway:
     image: apigateway:latest
@@ -108,11 +107,13 @@ services:
     depends_on:
       - config-server
       - auth
+      - eureka-server
+      - nginx
 
   mock-service:
     image: mockservice:latest
     ports:
-      - "5000:5000"
+      - "9190:9190"
 
 
   demo-service:
