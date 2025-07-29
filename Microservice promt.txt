@@ -1,0 +1,99 @@
+create an spring-boot apigateway using spring cloud gateway
+port 9090
+java 17
+with org.springframework.boot 2.7.2
+with spring-boot-starter-oauth2-client
+with controller.java
+With Two backend services acting as : user-service /api/user port 9194; book-service /api/book port 9195
+
+
+create an spring-boot microservice
+java 17
+with eureka client
+with config client
+with spring-boot-starter-scheduling 
+execute cron from config
+execute bash script from config
+execute python script from config
+execute .jar from config
+trigger these jobs manually via REST
+
+
+create an spring-boot service
+java 17
+with  @GetMapping path load from config
+with  @PostMapping path load from config
+
+
+
+
+create an spring-boot service
+java 17
+With @RequestMapping("/api") load from config
+with  multible @GetMapping path load from config
+with  multible @PostMapping path load from config
+
+
+create an spring-boot service
+java 17
+with mockserver
+
+MockServer
+https://www.mock-server.com/mock_server/running_mock_server.html#docker_container
+create a specific request with mock server
+create many specific requests with mock server
+-->
+npm install -g json-server
+json-server --watch db.json --port 3000
+
+{
+  "users": [],
+  "products": [],
+  "orders": []
+}
+
+POST /users
+Content-Type: application/json
+
+{
+  "name": "Alice",
+  "email": "alice@example.com",
+  "role": "admin"
+}
+
+
+PUT /users/1
+Content-Type: application/json
+
+{
+  "name": "Alice B.",
+  "email": "alice.b@example.com",
+  "role": "user"
+}
+
+create many specific requests with get, post, delete, update mock server
+
+# Use Node.js base image
+FROM node:18
+
+# Set working directory
+WORKDIR /app
+
+# Install json-server globally
+RUN npm install -g json-server
+
+# Copy db.json into the container
+COPY db.json /app/db.json
+
+# Expose the port json-server will run on
+EXPOSE 3000
+
+# Run json-server with the db
+CMD ["json-server", "--watch", "db.json", "--host", "0.0.0.0", "--port", "3000"]
+
+create json-server container dockerfile
+with db.json from volumn
+with hot reloading via nodemon
+with Resource-server behavior secured by a Keycloak identity provider
+
+

@@ -19,6 +19,8 @@ volumes:
     driver: local # Define a named volume for Eureka log persistence
   config_log:
     driver: local # Define a named volume for Config log persistence
+  mock_data:
+    driver: local # Define a named volume for Mock Service log persistence
 
 services:
   minio:
@@ -95,8 +97,7 @@ services:
       KEYCLOAK_PORT: 8080
       KEYCLOAK_SSL_REQUIRED: external
       KEYCLOAK_LOGLEVEL: DEBUG
-    depends_on:
-      - mysql
+
 
   api-gateway:
     image: apigateway:latest
@@ -108,12 +109,18 @@ services:
     depends_on:
       - config-server
       - auth
+      - eureka-server
+      - nginx
+
+
+
 
   mock-service:
     image: mockservice:latest
+    volumes:
+      - mock_data:/app/mock
     ports:
-      - "5000:5000"
-
+      - "3000:3000"
 
   demo-service:
     image: demo-service:latest
@@ -136,7 +143,6 @@ services:
       - api-gateway
       - auth
       - eureka-server
-
       
   fespa:
     image: nguyenthaidien/fespa:latest
